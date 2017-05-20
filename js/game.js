@@ -49,13 +49,22 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 
 		console.log(userGuess);
 
-		getElementById("wins");
+		// getElementById("#winCounter");
 
 		var computerGuess = letters[Math.floor(Math.random()*letters.length)];
 
 		console.log(computerGuess);
 
-		document.getElementById((userGuess==computerGuess))  [wins++, document.getElementById("wins").innerHTML = ("Wins: " + winCounter)]
+		$("#userWins").html("Wins: " + winCounter)
+		console.log(winCounter)
+
+		$("#userLosses").html("Losses: " + lossCounter)
+		console.log(lossCounter)
+
+		$("#userGuess").html("Guesses left: " + guessesRemainingCounter)
+		console.log(guessesRemainingCounter)
+
+		// document.getElementById((userGuess==computerGuess))  [wins++, document.getElementById("winCounter").innerHTML = ("winCounter: " + winCounter++)]
 
 
 	};
