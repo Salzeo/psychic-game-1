@@ -1,47 +1,52 @@
+$(document).ready(function() {
+
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 
-		var winCounter = 0;
+		var winCounter = 1;
 		var lossCounter = 0;
-		var guessesRemainingCounter = 9;
+		var guessesRemainingCounter = 8;
 		var guessesSoFarCounter = "";
 		var computerEntry
+		var userEntry
 		var randomletter = []
-
-	function randomletter() {
 
 		computerEntry = letters[Math.floor(Math.random()*letters.length)];
 		console.log(computerEntry);
-	}
+	
 
 	document.onkeyup = function(keyPressed) {
-	var userEntry = keyPressed.key;	
+	userEntry = keyPressed.key;
+	$("#soFar").html("Guesses so far: " + userEntry)
+
 
 		if (userEntry === computerEntry) {
-					lettersGuessed = "";
-					$("#userWins").html("Wins: " + winCounter);
-					console.log(winCounter);
-					randomLetter();
-				}
+					guessesSoFarCounter = "";
+					$("#userWins").html("Wins: " + winCounter++)
+					console.log(winCounter)
+					$("#randomLetter")
+				};
 
-		else {
-			
+		if (userEntry != computerEntry){
+			$("#userGuess").html("Guesses left: " + guessesRemainingCounter--);
+			console.log(guessesRemainingCounter);
+		}
 
-
-
-			$("#userLosses").html("Losses: " + lossCounter);
+			}
+			$("#userLosses").html("Losses: " + lossCounter--);
 			console.log(lossCounter);
 
-			$("#userGuess").html("Guesses left: " + guessesRemainingCounter);
-			console.log(guessesRemainingCounter);
 
-			$("#soFar").append(userGuess);
-			console.log(userGuess);
-			}
+		// console.log(guessesRemainingCounter)
+			
 
+			
+			
+			
+});
 										
 
-											}
+											
 
 
 
