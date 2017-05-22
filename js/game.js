@@ -5,35 +5,65 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 		var lossCounter = 0;
 		var guessesRemainingCounter = 9;
 		var guessesSoFarCounter = "";
+		var computerEntry
+		var randomletter = []
 
-	document.onkeyup = function(){
+	function randomletter() {
+
+		computerEntry = letters[Math.floor(Math.random()*letters.length)];
+		console.log(computerEntry);
+	}
+
+	document.onkeyup = function(keyPressed) {
+	var userEntry = keyPressed.key;	
+
+		if (userEntry === computerEntry) {
+					lettersGuessed = "";
+					$("#userWins").html("Wins: " + winCounter);
+					console.log(winCounter);
+					randomLetter();
+				}
+
+		else {
+			
+
+
+
+			$("#userLosses").html("Losses: " + lossCounter);
+			console.log(lossCounter);
+
+			$("#userGuess").html("Guesses left: " + guessesRemainingCounter);
+			console.log(guessesRemainingCounter);
+
+			$("#soFar").append(userGuess);
+			console.log(userGuess);
+			}
+
+										
+
+											}
+
+
+
+
 		
+		// var userGuess = String.fromCharCode(event.keyCode).
+		// 	toLowerCase();
 
-		console.log(userGuess);
+		// console.log(computerGuess);
 
-		// getElementById("#winCounter");
+		// $("#userWins").html("Wins: " + winCounter)
+		// console.log(winCounter)
 
-		var computerGuess = letters[Math.floor(Math.random()*letters.length)];
+		// $("#userLosses").html("Losses: " + lossCounter)
+		// console.log(lossCounter)
 
-		var userGuess = String.fromCharCode(event.keyCode).
-			toLowerCase();
-
-		console.log(computerGuess);
-
-		$("#userWins").html("Wins: " + winCounter)
-		console.log(winCounter)
-
-		$("#userLosses").html("Losses: " + lossCounter)
-		console.log(lossCounter)
-
-		$("#userGuess").html("Guesses left: " + guessesRemainingCounter)
-		console.log(guessesRemainingCounter)
+		// $("#userGuess").html("Guesses left: " + guessesRemainingCounter)
+		// console.log(guessesRemainingCounter)
 
 
 		// document.getElementById((userGuess==computerGuess))  [wins++, document.getElementById("winCounter").innerHTML = ("winCounter: " + winCounter++)]
 
-
-	};
 
 
 // $(document).ready(function() {
