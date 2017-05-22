@@ -33,13 +33,15 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 		}
 
 		if (guessesRemainingCounter < 1) {
-			$("#guessesRemainingCounter")[0].reset();
+			// $("#guessesRemainingCounter")[0].reset();
+			$("#userLosses").html("Losses: " + lossCounter++);
+			console.log(lossCounter);
+			// computerEntry = letters[Math.floor(Math.random()*letters.length)];
 
 		}
 
 			}
-			$("#userLosses").html("Losses: " + lossCounter--);
-			console.log(lossCounter);
+			
 			
 
 			
