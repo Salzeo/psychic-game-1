@@ -37,7 +37,7 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 			guessesRemainingCounter = 9
 			$("#userGuess").html("Guesses left: " + guessesRemainingCounter);
 			$("#userLosses").html("Losses: " + lossCounter++);
-			$("#soFar").html("");
+			$("#soFar").html("Guesses so far:");
 			console.log(lossCounter);
 			computerEntry = letters[Math.floor(Math.random()*letters.length)];
 			console.log(computerEntry);
