@@ -24,7 +24,8 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 					guessesSoFarCounter = "";
 					$("#userWins").html("Wins: " + winCounter++)
 					console.log(winCounter)
-					$("#randomLetter")
+					computerEntry = letters[Math.floor(Math.random()*letters.length)];
+					console.log(computerEntry);
 				};
 
 		if (userEntry != computerEntry){
@@ -32,11 +33,13 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 			console.log(guessesRemainingCounter);
 		}
 
-		if (guessesRemainingCounter < 1) {
-			// $("#guessesRemainingCounter")[0].reset();
+		if (guessesRemainingCounter < 0) {
+			guessesRemainingCounter = 9
+			$("#userGuess").html("Guesses left: " + guessesRemainingCounter);
 			$("#userLosses").html("Losses: " + lossCounter++);
 			console.log(lossCounter);
-			// computerEntry = letters[Math.floor(Math.random()*letters.length)];
+			computerEntry = letters[Math.floor(Math.random()*letters.length)];
+			console.log(computerEntry);
 
 		}
 
