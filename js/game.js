@@ -26,6 +26,7 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 					console.log(winCounter)
 					computerEntry = letters[Math.floor(Math.random()*letters.length)];
 					console.log(computerEntry);
+					$("#soFar").html("Guesses so far: ");
 				};
 
 		if (userEntry != computerEntry){
